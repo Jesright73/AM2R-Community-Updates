@@ -232,7 +232,7 @@ display_reset(0, global.opvsync);
         global.tiptext = tip[global.curropt];
     }
     
-    var input = oControl.kRight - oControl.kLeft;
+    var input = (ceil(oControl.kRight) - ceil(oControl.kLeft));
     var inputSteps = oControl.kRightPushedSteps - oControl.kLeftPushedSteps;
     
     // Menu LEFT and RIGHT
@@ -309,7 +309,7 @@ display_reset(0, global.opvsync);
         
         // Button Prompt Style
         if (buttonsEnabled &amp;&amp; global.curropt == opButtonType) {
-            var inputMax = 5 - ((os_type == os_android) * 2);
+            var inputMax = 5;
             oControl.mod_buttonsconfig = wrap(oControl.mod_buttonsconfig + input, 0, inputMax);
             
             // Update events
